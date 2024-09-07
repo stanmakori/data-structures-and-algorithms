@@ -1,0 +1,7 @@
+https://leetcode.com/problems/pacific-atlantic-water-flow/
+https://app.codility.com/self-register/Microsoft-Kenya-SSWE-III-Homework---Graphs-I/
+https://leetcode.com/problems/find-if-path-exists-in-graph/
+https://leetcode.com/problems/find-eventual-safe-states/
+https://app.codility.com/public-link/Microsoft-Kenya-SSWE-III-Peer-Interviews---Graphs-A/
+https://app.codility.com/public-link/Microsoft-Kenya-SSWE-III-Peer-Interviews---Graphs-D/
+https://app.codility.com/self-register/Microsoft-Kenya-SSWE-III-Peer-Interviews---Graphs-B/

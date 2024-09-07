@@ -1,0 +1,32 @@
+#####1####
+We are provided with a plan of an industrial village, represented by an array A consisting of N integers. The K-th value (for K within the range 0...N−1) represents a field which may contain:
+a forest consisting of A[K] trees (if A[K] is positive); or
+an industrial building (if A[K] is non-positive), producing −A[K] units of pollution.
+One tree is able to neutralize one unit of pollution. Our goal is to make every neighborhood sustainable, i.e. for every field, the sum of its value and the values of its neighbors (adjacent fields to the left and right) should be greater than or equal to zero. To achieve this goal, we can plant additional trees in any chosen field (note that we can plant trees in fields containing industrial buildings).
+For example, given A = [1, −3, 2], there is one tree in the field number 0, an industrial building producing 3 units of pollution in field number 1, and two trees in field number 2. The sums of values of the fields and their neighbors are 1 + (−3) = −2 for field number 0, 1 + (−3) + 2 = 0 for field number 1, and (−3) + 2 = −1 for field number 2. The neighborhoods of fields 0 and 2 are not sustainable, as their sums are negative. After planting two trees in field 1, we obtain A = [1, −1, 2]. In the new array, the sums are respectively 0, 2, and 1, which makes every neighborhood sustainable.
+What is the minimum number of trees we have to plant in order to make every field's neighborhood sustainable?
+Write a function:
+class Solution { public int solution(int[] A); }
+that, given an array A consisting of N integers, returns the minimum number of trees we have to plant in order to make every field's neighborhood sustainable.
+Examples:
+Given A = [1, −3, 2], the function should return 2, as described above.
+Given A = [−3, 2, 4, −5, 3], the function should return 3. We can plant one tree in field number 0 and two trees in field number 4, achieving [-2, 2, 4, −5, 5].
+Given A = [−2, 1, −3, 1], the function should return 4. We can plant two trees each in fields number 1 and 2. After that, we obtain values [-2, 3, -1, 1].
+Write an efficient algorithm for the following assumptions:
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [−10,000..10,000].
+
+#####2####
+You are given a string consisting of lowercase letters of the English alphabet. You must split this string into a minimal number of substrings in such a way that no letter occurs more than once in each substring.
+For example, here are some correct splits of the string "abacdec": ('a', 'bac', 'dec'), ('a', bacd', 'ec') and ('ab', 'ac', 'dec').
+Write a function:
+class Solution { public int solution(String S); }
+that, given a string S of length N, returns the minimum number of substrings into which the string has to be split.
+Examples:
+Given 'world', your function should return 1. There is no need to split the string into substrings as all letters occur just once.
+Given 'dddd', your function should return 4. The result can be achieved by splitting the string into four substrings ('d', 'd', 'd', 'd').
+Given 'cycle', your function should return 2. The result can be achieved by splitting the string into two substrings ('cy', 'cle') or ('c', 'ycle').
+Given 'abba', your function should return 2. The result can be achieved by splitting the string into two substrings ('ab', 'ba').
+Write an efficient algorithm for the following assumptions:
+N is an integer within the range [1..1,000,000];
+string S is made only of lowercase letters (a−z).

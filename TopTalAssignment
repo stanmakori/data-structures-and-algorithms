@@ -1,0 +1,80 @@
+========Question 1==================
+From an integer X representing a time duration in seconds , produce a simplified representation. Fo example, given X=100, the output should be "1m40s".   the appreviations are:
+1w for 1 week
+1d for 1 day
+1h for 1 hour
+1m for 1 mnute
+1s for one second
+
+Only 2 of the largest non-zero units should be used. Round up the seconds unit if necessary so that the output only has 2 units.
+
+example 2: X=4223
+output= "1h10m23s"
+
+
+==============Question 2=======================
+An internal unit of company XYZ provides services to other departments.
+Service prices are fixed at the beginning of the quarter based on project expenses and utilization. However, usage is billed at the end of the quarter.
+So while composing quarterly invoices, there maybe an excess. We suppose planning is very good, so there is only ever a modest average.
+The amount should be returned to the departments by by discounting a portion of it on each invoice.
+Your job is to write a function which considers the excess S and allocate it fairly. Allocation proceeds from the largest to the smallest invoice. And is distributed as the ratio of the invoice's contribution to the sum of itself and those which follow:
+
+Example 1:
+
+Given S="300.01" and B=["300.00","200.00","100.00"]
+R[0]="150.00"(=300.01*300.00/600.00)
+R[1]="100.00"(=150.01*200.00/300.00)
+R[2]="50.00"(=50.01*100.00/100.00)
+
+Example 2(Pay careful attention on this one)
+Given S="1.00" and B=["0.05","1.00"]
+First we consider 1.00 because it is the largest,
+           a. 1.00*1.00/1.05 ~=0.952338
+           b. Round 0.95238 to "0.95". Rounding down to carry pennies to smaller departments.
+           c. set R[1]=0.95. Notice this is the same place as 1.0.0. It is the second value in the result!
+
+    2. Now we have 0.05 left
+    3. Next we look at the smaller B[0] =0.05 department.
+           a. 0.05*0.05/0.05=0.05
+           b. no rounding required
+           c. set  R[0]=0.05
+           R=["0.05","0.95"]
+
+   Write a function 
+         class Solution
+         {
+            public String[] solution(String s, String[] B)
+            {
+
+            }
+         }
+
+that , given a string representating yhe total excess bilables and an array B consisting of K strings representing the undiscounted bills for each customer. The return value should be an array of Strings R(length M) in the same order as B representing the amount of the discount to each customer.
+
+Notes:
+1. Total S should be completely refunded. .Neither more nor less that S should be returned . Dont lose or gain a penny!
+2. Be careful with the types that you choose to represent currencies. Floating point numbers are notoriously error prone for precise calculations with currencies.
+3. Amounts should be rounded down to the nearest $0.01. By design, fractional pennies are pushed to groups with smaller unadjusted invoices.
+4. Results should be represented with 2 decimal places of precision as strings, even if these are both zeros. ex "100.00".
+5. You may assume sensible inputs. The total to be discounted will never exceed the total of the unadjustable invoices.
+6. Please pay attention to returning the discounts in the same order as the incoming invoices.
+
+
+
+
+==============Question 3=======================
+While a user is downloading a file which is X bytes in size, your job is to provide a function to estimate the time remaining in minutes. The system has a record of the amount(in bytes) B downloaded each minute.
+
+If the file is not completely downloaded , estimate the rate by taking the simple  average of the smallest Z observations.
+
+write a function :
+          class Solution{public int solution(int x, int[]B, IN Z){}}
+    that returns the amount of remaining time in minutes. X is an integer representing file the size. B is a length K array of integers listing the bytes downloaded at each minute starting from the beginning of the download until now. Return an integer representing the number of minutes remaining. Z is an integer. Yiu may assume that all inputs are reasonable. 
+
+        Example:
+        X=100,B=[10,6,6,8],Z=2
+        30 bytes=10+6+6+8 ahve been downloaded  and so far 70 remain.
+        The average pf the last two minutes(Z=2) IS 7=(6+8)/2
+        The function should return 10 minutes(70/7).
+        
+
